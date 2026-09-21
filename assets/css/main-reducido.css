@@ -1,0 +1,487 @@
+@import url("fontawesome-all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+
+/*
+	Fierrotech / chimango_lp
+	CSS reducido para el index.html actual.
+*/
+
+/* Reset mínimo */
+html, body, div, span, h1, p, a, form, input, footer, ul, li, img {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 6em 4em 4em;
+	background: #000;
+	color: rgba(255, 255, 255, 0.75);
+	font-family: "Roboto", sans-serif;
+	font-size: 16pt;
+	font-weight: 400;
+	letter-spacing: -0.01em;
+	line-height: 1.65em;
+	-webkit-text-size-adjust: none;
+}
+
+/* Evita animaciones durante la carga inicial */
+body.is-preload *,
+body.is-preload *::before,
+body.is-preload *::after {
+	animation: none !important;
+	transition: none !important;
+}
+
+/* Mantiene el contenido por encima del slideshow */
+body > * {
+	position: relative;
+	z-index: 2;
+}
+
+/* Fondo animado creado por main.js */
+#bg {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.375;
+	transition: opacity 2s ease-in-out;
+	overflow: hidden;
+}
+
+#bg div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity 3s ease;
+}
+
+#bg div.visible {
+	z-index: 1;
+	opacity: 1;
+	visibility: visible;
+	animation: bg 45s linear infinite;
+}
+
+#bg div.visible.top {
+	z-index: 2;
+}
+
+#bg div:only-child {
+	animation-direction: alternate !important;
+}
+
+body.is-preload #bg {
+	opacity: 0;
+}
+
+@keyframes bg {
+	from {
+		transform: translateX(0);
+	}
+	to {
+		transform: translateX(-25%);
+	}
+}
+
+/* Tipografía y enlaces */
+a {
+	color: #1cb495;
+	text-decoration: none;
+	border-bottom: dotted 1px rgba(255, 255, 255, 0.25);
+	transition: border-bottom-color 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+	color: #1cb495;
+	border-bottom-color: transparent;
+}
+
+h1 {
+	color: #fff;
+	font-weight: 700;
+	line-height: 1.25em;
+}
+
+/* Header */
+#header h1 {
+	margin: 0 0 0.55em;
+	font-size: 3.25em;
+}
+
+#header p {
+	margin: 0 0 1.5em;
+	font-size: 1.35em;
+	line-height: 1.65em;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+#header a {
+	color: inherit;
+}
+
+/* Formulario */
+#signup-form {
+	display: flex;
+	position: relative;
+	margin: 0 0 2em;
+}
+
+#signup-form input[type="email"] {
+	width: 18em;
+	height: 2.75em;
+	padding: 0 1em;
+	background: transparent;
+	border: solid 2px rgba(255, 255, 255, 0.35);
+	border-radius: 6px;
+	outline: 0;
+	color: inherit;
+	appearance: none;
+	transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+#signup-form input[type="email"]:focus {
+	background-color: rgba(255, 255, 255, 0.125);
+	border-color: #1cb495;
+	animation: focus 0.1s;
+}
+
+#signup-form input[type="email"]:invalid {
+	box-shadow: none;
+}
+
+#signup-form > * {
+	margin-left: 1em;
+}
+
+#signup-form > :first-child {
+	margin-left: 0;
+}
+
+::placeholder {
+	color: rgba(255, 255, 255, 0.5);
+	opacity: 1;
+}
+
+@keyframes focus {
+	0%, 100% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.025);
+	}
+}
+
+/* Botón */
+input[type="submit"] {
+	height: 2.75em;
+	padding: 0 1.125em;
+	background-color: #1cb495;
+	border: 0;
+	border-radius: 6px;
+	color: #fff;
+	cursor: pointer;
+	font-weight: 700;
+	line-height: 2.75em;
+	text-align: center;
+	white-space: nowrap;
+	appearance: none;
+	transition: background-color 0.2s ease-in-out, opacity 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+	background-color: #1fcaa7;
+}
+
+input[type="submit"]:active {
+	background-color: #199e83;
+}
+
+input[type="submit"]:disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+/* Mensaje creado por main.js */
+#signup-form .message {
+	height: 2.75em;
+	line-height: 2.75em;
+	opacity: 0;
+	transform: scale(1.05);
+	transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+
+#signup-form .message::before {
+	display: inline-block;
+	margin-right: 0.5em;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-style: normal;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+}
+
+#signup-form .message.visible {
+	opacity: 1;
+	transform: scale(1);
+}
+
+#signup-form .message.success {
+	color: #1cb495;
+}
+
+#signup-form .message.success::before {
+	content: "\f00c";
+}
+
+#signup-form .message.failure {
+	color: #ff2361;
+}
+
+#signup-form .message.failure::before {
+	content: "\f119";
+}
+
+/* Footer */
+#footer {
+	position: absolute;
+	left: 4em;
+	bottom: 4em;
+	color: rgba(255, 255, 255, 0.5);
+	opacity: 0.5;
+	transition: opacity 0.5s ease-in-out;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+#footer:hover {
+	opacity: 1;
+}
+
+#footer .icons {
+	margin: 0 0 0.5em;
+	padding: 0;
+	list-style: none;
+	padding: 12px;
+}
+
+#footer .icons li {
+	display: inline-block;
+
+}
+
+#footer .icons li:last-child {
+	padding: 12px;
+	margin: 12px auto;
+}
+
+#footer .icons a {
+	color: inherit;
+	border-bottom: 0;
+}
+
+.icon {
+	position: relative;
+	text-decoration: none;
+	border-bottom: 0;
+}
+
+.icon::before {
+	display: inline-block;
+	font-family: "Font Awesome 5 Free";
+	font-weight: 400;
+	font-style: normal;
+	font-variant: normal;
+	line-height: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+}
+
+.icon.brands::before {
+	font-family: "Font Awesome 5 Brands";
+}
+
+.icon.fa-github::before {
+	content: "\f09b";
+}
+
+.icon.fa-envelope::before {
+	content: "\f0e0";
+}
+
+.icon .label {
+	display: none;
+}
+
+#footer .icons .icon::before {
+	font-size: 1.25em;
+}
+
+#footer .copyright {
+	padding: 0;
+	list-style: none;
+	font-size: 0.8em;
+}
+
+#footer .copyright li {
+	display: inline-block;
+	align-items: center;
+	padding-bottom: 10px;
+	
+}
+
+#argentine-flag {
+	display: block;
+	width: 42px;
+	height: auto;
+	margin-left: 12px;
+	padding-bottom: 6px;
+}
+
+/* Responsive */
+@media screen and (max-width: 1680px) {
+	body {
+		padding: 6em 3.5em 3.5em;
+		font-size: 12pt;
+	}
+
+	#footer {
+		left: 3.5em;
+		bottom: 3.5em;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	body {
+		font-size: 11pt;
+	}
+
+	#bg div.visible {
+		animation-duration: 29.25s;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	body {
+		font-size: 12pt;
+	}
+}
+
+@media screen and (max-width: 736px) {
+	body {
+		padding: 5em 2em 2em;
+		font-size: 12pt;
+	}
+
+	#header h1 {
+		font-size: 2em;
+	}
+
+	#header p {
+		font-size: 1em;
+	}
+
+	#bg div.visible {
+		animation-duration: 18s;
+	}
+
+	#footer {
+		left: 2em;
+		bottom: 2em;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	html, body {
+		min-width: 320px;
+	}
+
+	#header {
+		margin: 0 0 1em;
+	}
+
+	#signup-form {
+		flex-direction: column;
+	}
+
+	#signup-form input[type="email"] {
+		width: 100%;
+	}
+
+	#signup-form > * {
+		margin: 1.25em 0 0;
+	}
+
+	#signup-form > :first-child {
+		margin-top: 0;
+	}
+
+	#signup-form .message {
+		position: absolute;
+		left: 0;
+		bottom: -1.5em;
+		height: 1em;
+		margin-top: 0;
+		font-size: 0.9em;
+		line-height: inherit;
+	}
+
+	input[type="submit"] {
+		padding: 0;
+	}
+}
+
+@media screen and (max-width: 360px) {
+	body {
+		padding: 5em 1.25em 1.25em;
+	}
+
+	#footer {
+		left: 1.25em;
+		bottom: 1.25em;
+	}
+}
+
+@media screen and (max-height: 640px) {
+	html, body {
+		height: auto;
+		min-height: 100%;
+	}
+
+	#footer {
+		position: relative;
+		left: auto;
+		bottom: auto;
+		margin: 1em 0 0;
+	}
+}

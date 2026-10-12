@@ -1,46 +1,85 @@
 <!DOCTYPE HTML>
-<!--
-	Eventually by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-		<title>Eventually by HTML5 UP</title>
+		<title>landingPage</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="/assets/css/main-reducido.css?v=2" />
+		<!-- Font Awesome  -->
+		<link rel="stylesheet" href="/vendor/fontawesome/css/all.min.css">
+		<!-- AOS -->
+		<link rel="stylesheet" href="/vendor/aos/aos.css">
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
-			<header id="header">
-				<h1>Eventually</h1>
-				<p>A simple template for telling the world when you'll launch<br />
-				your next big thing. Brought to you by <a href="http://html5up.net">HTML5 UP</a>.</p>
+			<header id="header" data-aos="fade-down" data-aos-duration="1000">
+				<h1>chimango_lp</h1>
+				<p>Si necesitas crear una app<br />
+				o ayuda con software libre<a href="https://fierrotech.com.ar"> acá me encontras</a>.</p>
 			</header>
 
 		<!-- Signup Form -->
-			<form id="signup-form" method="post" action="#">
-				<input type="email" name="email" id="email" placeholder="Email Address" />
-				<input type="submit" value="Sign Up" />
+			
+			<form id="signup-form" data-aos="fade-up" data-aos-duration="1200">
+			    <input
+			        type="email"
+			        name="email"
+			        id="email"
+			        placeholder="Tu correo electrónico"
+			        aria-label="Correo electrónico"
+			        required
+			    />
+			    <input type="submit" value="Contactame" />
 			</form>
 
+
 		<!-- Footer -->
-			<footer id="footer">
+			<footer id="footer" data-aos="fade-up" data-aos-delay="300">
+				
 				<ul class="icons">
-					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
+				    <li>
+				        <a href="https://github.com/ggaita"
+				           aria-label="GitHub"
+				           target="_blank"
+				           rel="noopener noreferrer">
+				            <i class="fa-brands fa-github" aria-hidden="true"></i>
+				        </a>
+				    </li>
+				    <li>
+				        <a href="mailto:chimango_lp@fierrotech.com.ar"
+				           aria-label="Correo electrónico">
+				            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+				        </a>
+				    </li>
 				</ul>
+
 				<ul class="copyright">
-					<li>&copy; Untitled.</li><li>Credits: <a href="http://html5up.net">HTML5 UP</a></li>
+					<li>&copy; Chimango_lp</li>
 				</ul>
+				<img src="./images/flag_of_Argentina.webp" alt="bandera" id="argentine-flag">
 			</footer>
 
 		<!-- Scripts -->
 			<script src="assets/js/main.js"></script>
+
+		<!-- SweetAlert2 instalado mediante NPM -->
+		<script src="/vendor/sweetalert2/sweetalert2.all.min.js"></script>
+
+		<!-- Lógica del formulario -->
+		<script src="/assets/js/contacto.js"></script>
+		
+		<!-- AOS -->
+		<script src="/vendor/aos/aos.js"></script>
+
+		<script>
+		    AOS.init({
+		        duration: 1000,
+		        once: true,
+		        offset: 0,
+		        disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+		    });
+		</script>
 
 	</body>
 </html>

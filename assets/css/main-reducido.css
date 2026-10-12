@@ -1,4 +1,3 @@
-@import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
 
 /*
@@ -150,9 +149,15 @@ h1 {
 
 /* Formulario */
 #signup-form {
-	display: flex;
-	position: relative;
-	margin: 0 0 2em;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-start;
+    gap: 12px;
+    position: relative;
+    width: auto;
+    max-width: 100%;
+    margin: 0 0 2em;
 }
 
 #signup-form input[type="email"] {
@@ -178,13 +183,7 @@ h1 {
 	box-shadow: none;
 }
 
-#signup-form > * {
-	margin-left: 1em;
-}
 
-#signup-form > :first-child {
-	margin-left: 0;
-}
 
 ::placeholder {
 	color: rgba(255, 255, 255, 0.5);
@@ -202,7 +201,7 @@ h1 {
 
 /* Botón */
 input[type="submit"] {
-	height: 2.75em;
+	height: 2.5em;
 	padding: 0 1.125em;
 	background-color: #1cb495;
 	border: 0;
@@ -485,3 +484,7 @@ input[type="submit"]:disabled {
 		margin: 1em 0 0;
 	}
 }
+
+
+
+

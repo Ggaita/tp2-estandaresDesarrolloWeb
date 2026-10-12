@@ -1,0 +1,31 @@
+{
+  "name": "landingpage-fierrotech",
+  "version": "1.0.0",
+  "description": "landing page desarrollada con Node.js y NPM",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ggaita/tp2-estandaresDesarrolloWeb.git"
+  },
+  "keywords": [
+    "landing-page",
+    "node.js",
+    "software-libre"
+  ],
+  "author": "Gonzalo Gaita",
+  "license": "CC-BY-3.0",
+  "bugs": {
+    "url": "https://github.com/Ggaita/tp2-estandaresDesarrolloWeb/issues"
+  },
+  "homepage": "https://github.com/Ggaita/tp2-estandaresDesarrolloWeb#readme",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^7.3.1",
+    "aos": "^2.3.4",
+    "express": "^5.3.0",
+    "sweetalert2": "^11.26.25"
+  }
+}
